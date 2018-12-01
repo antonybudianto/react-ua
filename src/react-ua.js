@@ -22,3 +22,5 @@ UserAgentProvider.propTypes = {
   value: PropTypes.any,
   children: PropTypes.node
 };
+
+export default UserAgent;
