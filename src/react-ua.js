@@ -4,9 +4,9 @@ import UAParser from 'ua-parser-js';
 
 const UserAgentContext = React.createContext();
 
-const UserAgent = UserAgentContext.Consumer;
+export const UserAgent = UserAgentContext.Consumer;
 
-class UserAgentProvider extends Component {
+export class UserAgentProvider extends Component {
   render() {
     return (
       <UserAgentContext.Provider
@@ -22,5 +22,3 @@ UserAgentProvider.propTypes = {
   value: PropTypes.any,
   children: PropTypes.node
 };
-
-export { UserAgentProvider, UserAgent };
