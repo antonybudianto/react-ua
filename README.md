@@ -3,6 +3,10 @@
 [![npm version](https://badge.fury.io/js/react-ua.svg)](https://badge.fury.io/js/react-ua)
 [![Build Status](https://travis-ci.org/antonybudianto/react-ua.svg?branch=master)](https://travis-ci.org/antonybudianto/react-ua)
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/7658554/49334914-f4ff8c80-f613-11e8-820b-49a5b446d889.png">
+</p>
+
 React User Agent Component and Provider, SSR-ready, using new React Context API
 
 ## Features
