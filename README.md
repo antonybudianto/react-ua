@@ -14,6 +14,7 @@ React User Agent Component and Provider, SSR-ready, using new React Context API
 - Wrapper for [ua-parser-js](https://github.com/faisalman/ua-parser-js)
 - Using new React [Context API](https://reactjs.org/docs/context.html)
 - SSR-ready
+- Unit-tested
 
 > Try it [live at StackBlitz](https://stackblitz.com/edit/demo-react-ua)
 
