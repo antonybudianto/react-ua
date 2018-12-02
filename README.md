@@ -19,27 +19,20 @@ React User Agent Component and Provider, SSR-ready, using new React Context API
 > Try it [live at StackBlitz](https://stackblitz.com/edit/demo-react-ua)
 
 ```js
-import React, { Component } from 'react';
+import React from 'react';
 import { UserAgentProvider, UserAgent } from 'react-ua';
 
-class App extends Component {
-  render() {
-    return <UserAgent>{ua => <div>OS: {ua.os.name}</div>}</UserAgent>;
-  }
-}
+const App = () => (
+  <UserAgent>{ua => <div>OS: {ua.os.name}</div>}</UserAgent>
+)
 
-class Home extends Component {
-  state = {
-    email: ''
-  };
-  render() {
-    return (
-      <UserAgentProvider>
-        <App />
-      </UserAgentProvider>
-    );
-  }
-}
+const Home = () => (
+  <UserAgentProvider>
+    <App />
+  </UserAgentProvider>
+);
+
+ReactDOM.render(<Home />, document.getElementById("#root"))
 
 // SSR
 const el = (
@@ -48,7 +41,7 @@ const el = (
   </UserAgentProvider>
 );
 
-renderToString(el);
+ReactDOMServer.renderToString(el);
 ```
 
 ## License
