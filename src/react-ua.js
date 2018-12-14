@@ -7,11 +7,16 @@ const UserAgentContext = React.createContext();
 export const UserAgent = UserAgentContext.Consumer;
 
 export class UserAgentProvider extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      ua: new UAParser(props.value).getResult()
+    };
+  }
   render() {
     return (
-      <UserAgentContext.Provider
-        value={new UAParser(this.props.value).getResult()}
-      >
+      <UserAgentContext.Provider value={this.state.ua}>
         {this.props.children}
       </UserAgentContext.Provider>
     );
