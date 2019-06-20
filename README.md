@@ -20,24 +20,30 @@ React User Agent Component and Provider, SSR-ready, using new React Context API
 
 ```js
 import React from 'react';
-import { UserAgentProvider, UserAgent } from 'react-ua';
+import { UserAgentProvider, UserAgent, withUserAgent } from 'react-ua';
 
-const App = () => (
+const Comp = () => (
   <UserAgent>{ua => <div>OS: {ua.os.name}</div>}</UserAgent>
 )
 
-const Home = () => (
+const CompWithHoc = withUserAgent(({ ua }) => (
+  <div>OS: {ua.os.name}</div>
+));
+
+const App = () => (
   <UserAgentProvider>
-    <App />
+    <Comp />
+    <CompWithHoc />
   </UserAgentProvider>
 );
 
-ReactDOM.render(<Home />, document.getElementById("#root"))
+ReactDOM.render(<App />, document.getElementById("#root"))
 
 // SSR
 const el = (
   <UserAgentProvider value={request.headers['user-agent']}>
-    <App />
+    <Comp />
+    <CompWithHoc />
   </UserAgentProvider>
 );
 
