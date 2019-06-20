@@ -1,6 +1,6 @@
 {
   "name": "react-ua",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "React User Agent component and provider with new React Context API",
   "main": "dist/react-ua.js",
   "umd:main": "dist/react-ua.umd.js",
