@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import UAParser from 'ua-parser-js';
 
@@ -8,14 +8,7 @@ export const UserAgent = UserAgentContext.Consumer;
 
 export const UserAgentProvider = ({ value, children }) => {
   const initUA = new UAParser(value).getResult();
-  const [ua, setUA] = useState(initUA);
-
-  useEffect(() => {
-    if (ua.ua !== value) {
-      const currentUA = new UAParser(value).getResult();
-      setUA(currentUA);
-    }
-  });
+  const [ua] = useState(initUA);
 
   return (
     <UserAgentContext.Provider value={ua}>{children}</UserAgentContext.Provider>

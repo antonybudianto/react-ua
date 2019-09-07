@@ -9,6 +9,10 @@
 
 React User Agent Component and Provider, SSR-ready, using new React Context API
 
+## Requirement
+
+- React 16.8.0
+
 ## Features
 
 - Wrapper for [ua-parser-js](https://github.com/faisalman/ua-parser-js)

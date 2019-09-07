@@ -36,26 +36,27 @@
   },
   "homepage": "https://github.com/antonybudianto/react-ua#readme",
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.9.0"
   },
   "devDependencies": {
-    "@babel/core": "7.1.6",
-    "@babel/preset-env": "7.1.6",
+    "@babel/polyfill": "7.6.0",
+    "@babel/core": "7.6.0",
+    "@babel/preset-env": "7.6.0",
     "@babel/preset-react": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "10.0.1",
-    "babel-jest": "23.6.0",
-    "eslint": "5.9.0",
-    "eslint-plugin-jest": "22.0.0",
-    "eslint-plugin-react": "7.11.1",
-    "jest": "23.6.0",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "eslint": "6.3.0",
+    "eslint-plugin-jest": "22.17.0",
+    "eslint-plugin-react": "7.14.3",
+    "jest": "24.9.0",
     "microbundle": "0.7.0",
-    "prop-types": "15.6.2",
-    "react": "16.8.0",
-    "react-dom": "16.8.0",
-    "react-testing-library": "5.3.0"
+    "prop-types": "15.7.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "@testing-library/react": "9.1.4"
   },
   "dependencies": {
-    "ua-parser-js": "0.7.19"
+    "ua-parser-js": "0.7.20"
   }
 }

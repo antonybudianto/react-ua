@@ -6,6 +6,9 @@
     "browser": true,
     "jest": true
   },
+  "rules": {
+    "no-useless-catch": "off"
+  },
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
