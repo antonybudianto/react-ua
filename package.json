@@ -15,7 +15,8 @@
     "release": "npm publish --access public",
     "lint": "eslint src",
     "test": "jest",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --coverage",
+    "prt": "prettier src/**/*.js --write"
   },
   "jest": {
     "testEnvironment": "jsdom"
@@ -39,22 +40,24 @@
     "react": "^16.9.0"
   },
   "devDependencies": {
-    "@babel/polyfill": "7.6.0",
     "@babel/core": "7.6.0",
+    "@babel/polyfill": "7.6.0",
     "@babel/preset-env": "7.6.0",
     "@babel/preset-react": "7.0.0",
+    "@testing-library/react": "9.1.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
     "eslint": "6.3.0",
     "eslint-plugin-jest": "22.17.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
     "jest": "24.9.0",
     "microbundle": "0.7.0",
+    "prettier": "1.18.2",
     "prop-types": "15.7.2",
     "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "@testing-library/react": "9.1.4"
+    "react-dom": "16.9.0"
   },
   "dependencies": {
     "ua-parser-js": "0.7.20"
