@@ -8,12 +8,11 @@ export const UserAgent = UserAgentContext.Consumer;
 
 export const UserAgentProvider = ({ value, children }) => {
   const initUA = new UAParser(value).getResult();
-  const [ua, setUA] = useState(initUA);
+  const [ua, setUa] = useState(initUA);
 
   useEffect(() => {
-    if (ua.ua !== value) {
-      const currentUA = new UAParser(value).getResult();
-      setUA(currentUA);
+    if (ua.ua !== value && value !== undefined) {
+      setUa(value);
     }
   });
 
@@ -29,7 +28,6 @@ UserAgentProvider.propTypes = {
 
 export const withUserAgent = Comp =>
   class UserAgentHoc extends React.PureComponent {
-
     // This method works with Next.js
     static async getInitialProps(ctx) {
       let initialProps = {};
