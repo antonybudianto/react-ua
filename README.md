@@ -16,6 +16,7 @@ React User Agent Component and Provider, SSR-ready, using new React Context API
 ## Features
 
 - Wrapper for [ua-parser-js](https://github.com/faisalman/ua-parser-js)
+- Using new React [Hooks API](https://reactjs.org/docs/hooks-faq.html)
 - Using new React [Context API](https://reactjs.org/docs/context.html)
 - SSR-ready
 - Unit-tested
@@ -24,24 +25,23 @@ React User Agent Component and Provider, SSR-ready, using new React Context API
 
 ```js
 import React from 'react';
-import { UserAgentProvider, UserAgent, withUserAgent } from 'react-ua';
+import { UserAgentProvider, useUserAgent } from 'react-ua';
 
-const Comp = () => (
-  <UserAgent>{ua => <div>OS: {ua.os.name}</div>}</UserAgent>
-)
+const CompWithHooks = () => {
+  const ua = useUserAgent();
+  return <div>OS: {ua.os.name}</div>;
+};
 
-const CompWithHoc = withUserAgent(({ ua }) => (
-  <div>OS: {ua.os.name}</div>
-));
+const CompWithHoc = withUserAgent(({ ua }) => <div>OS: {ua.os.name}</div>);
 
 const App = () => (
   <UserAgentProvider>
-    <Comp />
     <CompWithHoc />
+    <CompWithHooks />
   </UserAgentProvider>
 );
 
-ReactDOM.render(<App />, document.getElementById("#root"))
+ReactDOM.render(<App />, document.getElementById('#root'));
 
 // SSR
 const el = (

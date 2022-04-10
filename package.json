@@ -1,6 +1,6 @@
 {
   "name": "react-ua",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "React User Agent component and provider with new React Context API",
   "main": "dist/react-ua.js",
   "umd:main": "dist/react-ua.umd.js",
@@ -11,8 +11,8 @@
   "scripts": {
     "build": "microbundle --jsx=React.createElement",
     "dev": "microbundle watch --jsx=React.createElement --compress=false",
-    "prerelease": "npm run build",
-    "release": "npm publish --access public",
+    "old-prerelease": "npm run build",
+    "old-release": "npm publish --access public",
     "lint": "eslint src",
     "test": "jest",
     "test:ci": "jest --coverage",
@@ -37,14 +37,14 @@
   },
   "homepage": "https://github.com/antonybudianto/react-ua#readme",
   "peerDependencies": {
-    "react": "^16.9.0"
+    "react": "^16.9.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
     "@babel/polyfill": "7.6.0",
     "@babel/preset-env": "7.6.0",
     "@babel/preset-react": "7.0.0",
-    "@testing-library/react": "9.1.4",
+    "@testing-library/react": "13.0.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
     "eslint": "6.3.0",
@@ -53,10 +53,10 @@
     "eslint-plugin-react": "7.14.3",
     "jest": "24.9.0",
     "microbundle": "0.7.0",
-    "prettier": "1.18.2",
-    "prop-types": "15.7.2",
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "prettier": "2.6.2",
+    "prop-types": "15.8.1",
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
   },
   "dependencies": {
     "ua-parser-js": "^0.7.24"

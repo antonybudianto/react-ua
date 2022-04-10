@@ -26,6 +26,8 @@ UserAgentProvider.propTypes = {
   children: PropTypes.node
 };
 
+export const useUserAgent = () => React.useContext(UserAgentContext);
+
 export const withUserAgent = Comp =>
   class UserAgentHoc extends React.PureComponent {
     // This method works with Next.js
