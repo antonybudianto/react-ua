@@ -8,7 +8,8 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "no-useless-catch": "off"
+    "no-useless-catch": "off",
+    "react/prop-types": "off"
   },
   "parserOptions": {
     "sourceType": "module",

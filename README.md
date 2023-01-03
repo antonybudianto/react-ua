@@ -27,17 +27,14 @@ React User Agent Component and Provider, SSR-ready, using new React Context API
 import React from 'react';
 import { UserAgentProvider, useUserAgent } from 'react-ua';
 
-const CompWithHooks = () => {
+const Comp = () => {
   const ua = useUserAgent();
   return <div>OS: {ua.os.name}</div>;
 };
 
-const CompWithHoc = withUserAgent(({ ua }) => <div>OS: {ua.os.name}</div>);
-
 const App = () => (
   <UserAgentProvider>
-    <CompWithHoc />
-    <CompWithHooks />
+    <Comp />
   </UserAgentProvider>
 );
 
@@ -47,11 +44,24 @@ ReactDOM.render(<App />, document.getElementById('#root'));
 const el = (
   <UserAgentProvider value={request.headers['user-agent']}>
     <Comp />
-    <CompWithHoc />
   </UserAgentProvider>
 );
 
 ReactDOMServer.renderToString(el);
+```
+
+## HOC (deprecated)
+
+```tsx
+import { withUserAgent } from 'react-ua/hoc';
+
+const CompWithHoc = withUserAgent(({ ua }) => <div>OS: {ua.os.name}</div>);
+
+const App = () => (
+  <UserAgentProvider>
+    <CompWithHoc />
+  </UserAgentProvider>
+);
 ```
 
 ## License

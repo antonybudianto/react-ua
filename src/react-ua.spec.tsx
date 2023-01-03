@@ -1,13 +1,7 @@
-import '@babel/polyfill';
-
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import {
-  UserAgentProvider,
-  UserAgent,
-  withUserAgent,
-  useUserAgent
-} from './react-ua';
+import { UserAgentProvider, UserAgent, useUserAgent } from './react-ua';
+import { withUserAgent } from './hoc';
 import PropTypes from 'prop-types';
 
 const mockUa =
@@ -16,14 +10,14 @@ const mockUa =
 Object.defineProperty(
   window.navigator,
   'userAgent',
-  (function(_value) {
+  (function (_value) {
     return {
       get: function _get() {
         return _value;
       },
       set: function _set(v) {
         _value = v;
-      }
+      },
     };
   })(mockUa)
 );
@@ -34,7 +28,7 @@ describe('react-ua', () => {
   it('should render with default provider', () => {
     const el = (
       <UserAgentProvider>
-        <UserAgent>{v => <div>Browser: {v.browser.name}</div>}</UserAgent>
+        <UserAgent>{(v) => <div>Browser: {v.browser.name}</div>}</UserAgent>
       </UserAgentProvider>
     );
     const { getByText } = render(el);
@@ -46,7 +40,7 @@ describe('react-ua', () => {
       'Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15';
     const el = (
       <UserAgentProvider value={customUa}>
-        <UserAgent>{v => <div>OS: {v.os.name}</div>}</UserAgent>
+        <UserAgent>{(v) => <div>OS: {v.os.name}</div>}</UserAgent>
       </UserAgentProvider>
     );
     const { getByText } = render(el);
@@ -56,7 +50,7 @@ describe('react-ua', () => {
   it('should render HOC component with default provider', () => {
     const Comp = ({ ua }) => <div>Browser: {ua.browser.name}</div>;
     Comp.propTypes = {
-      ua: PropTypes.object
+      ua: PropTypes.object,
     };
 
     const CompWithHoc = withUserAgent(Comp);
@@ -75,7 +69,7 @@ describe('react-ua', () => {
 
     const Comp = ({ ua }) => <div>OS: {ua.os.name}</div>;
     Comp.propTypes = {
-      ua: PropTypes.object
+      ua: PropTypes.object,
     };
 
     const CompWithHoc = withUserAgent(Comp);

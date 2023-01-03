@@ -1,16 +1,15 @@
 {
   "name": "react-ua",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "React User Agent component and provider with new React Context API",
   "main": "dist/react-ua.js",
-  "umd:main": "dist/react-ua.umd.js",
   "source": "src/react-ua.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "microbundle --jsx=React.createElement",
-    "dev": "microbundle watch --jsx=React.createElement --compress=false",
+    "build": "babel --extensions=.ts,.tsx --config-file=./.babelrc src/. -d dist/. --ignore=**/*.spec.tsx",
+    "dev": "babel --watch --extensions=.ts,.tsx --config-file=./.babelrc src/. -d dist/. --ignore=**/*.spec.tsx",
     "old-prerelease": "npm run build",
     "old-release": "npm publish --access public",
     "lint": "eslint src",
@@ -40,10 +39,12 @@
     "react": "^16.9.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.6.0",
-    "@babel/polyfill": "7.6.0",
-    "@babel/preset-env": "7.6.0",
-    "@babel/preset-react": "7.0.0",
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^29.2.5",
     "@testing-library/react": "13.0.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
@@ -52,11 +53,9 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
     "jest": "24.9.0",
-    "microbundle": "0.14.2",
     "prettier": "2.6.2",
-    "prop-types": "15.8.1",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "dependencies": {
     "ua-parser-js": "^0.7.24"
