@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/antonybudianto/react-ua.svg?branch=master)](https://travis-ci.org/antonybudianto/react-ua)
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/7658554/49334914-f4ff8c80-f613-11e8-820b-49a5b446d889.png">
+<img src="https://user-images.githubusercontent.com/7658554/210290544-85e3a809-c9e2-4a96-a5ce-349f15be907f.png">
 </p>
 
 React User Agent Component and Provider, SSR-ready, using new React Context API
